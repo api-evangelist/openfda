@@ -1,0 +1,45 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "fda": "https://api.fda.gov/vocab#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "openFDA": {
+      "@id": "schema:GovernmentOrganization",
+      "@type": "@id"
+    },
+    "name": "schema:name",
+    "description": "schema:description",
+    "humanURL": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "baseURL": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "dataset": {
+      "@id": "dcat:Dataset",
+      "@type": "@id"
+    },
+    "endpoint": {
+      "@id": "dcat:accessURL",
+      "@type": "@id"
+    },
+    "license": "schema:license",
+    "publisher": "schema:publisher",
+    "provider": "schema:provider",
+    "Drug": "fda:DrugDataset",
+    "Device": "fda:DeviceDataset",
+    "Food": "fda:FoodDataset",
+    "AnimalAndVeterinary": "fda:AnimalAndVeterinaryDataset",
+    "Tobacco": "fda:TobaccoDataset",
+    "Other": "fda:OtherDataset",
+    "adverseEvent": "fda:AdverseEvent",
+    "enforcement": "fda:EnforcementReport",
+    "label": "fda:ProductLabel",
+    "approval": "fda:Approval",
+    "udi": "fda:UDIRecord",
+    "ndc": "fda:NationalDrugCode"
+  }
+}

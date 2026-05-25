@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/openfda/refs/heads/main/json-schema/openfda-search-response-schema.json",
+  "title": "openFDA Search Response",
+  "description": "Common envelope returned by every openFDA dataset endpoint (drug, device, food, animal & veterinary, tobacco, other). The shape of `results[*]` varies by dataset; `meta` is identical across all endpoints.",
+  "type": "object",
+  "required": ["meta"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "description": "Disclaimer, license, last-updated date, and pagination metadata.",
+      "required": ["disclaimer", "license", "last_updated", "results"],
+      "properties": {
+        "disclaimer": {
+          "type": "string",
+          "description": "Notice that openFDA data is not for clinical use."
+        },
+        "terms": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL of the openFDA terms of service."
+        },
+        "license": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL of the CC0 1.0 Universal Public Domain Dedication."
+        },
+        "last_updated": {
+          "type": "string",
+          "format": "date",
+          "description": "Date the underlying dataset was last refreshed."
+        },
+        "results": {
+          "type": "object",
+          "description": "Pagination metadata for the returned page.",
+          "required": ["skip", "limit", "total"],
+          "properties": {
+            "skip": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 25000,
+              "description": "Offset used for this page (capped at 25,000)."
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1000,
+              "description": "Page size for this request (capped at 1,000)."
+            },
+            "total": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Total number of records matching the search expression."
+            }
+          }
+        }
+      }
+    },
+    "results": {
+      "type": "array",
+      "description": "Per-dataset records. Shape varies by endpoint; consult the per-endpoint reference. Absent when `count` aggregation is requested.",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    }
+  }
+}

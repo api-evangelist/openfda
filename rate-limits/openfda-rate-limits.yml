@@ -1,0 +1,60 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: openFDA
+providerId: openfda
+created: '2026-05-25'
+modified: '2026-05-25'
+reconciled: true
+tags:
+  - Government
+  - Healthcare
+  - Rate Limiting
+description: >-
+  openFDA enforces a single platform-wide rate-limit policy across every dataset
+  endpoint. Without an API key, callers are throttled by source IP; with an API
+  key, the per-minute ceiling is unchanged but the per-day ceiling rises by two
+  orders of magnitude.
+sources:
+  - https://open.fda.gov/apis/authentication/
+  - https://open.fda.gov/apis/
+algorithm: fixed-window
+responseCodes:
+  throttled: 429
+tiers:
+  - id: anonymous
+    name: Anonymous (no API key)
+    auth: none
+    scope: per IP address
+    limits:
+      - window: minute
+        requests: 240
+      - window: day
+        requests: 1000
+    description: >-
+      Default tier for any caller that does not pass an api_key. Suitable for
+      light, sporadic use and local experimentation.
+  - id: with-key
+    name: Registered (with API key)
+    auth: api_key (query parameter or HTTP Basic password)
+    scope: per API key
+    limits:
+      - window: minute
+        requests: 240
+      - window: day
+        requests: 120000
+    description: >-
+      Default tier for any caller that registers a free api.data.gov key with
+      openFDA. The minute ceiling is identical to anonymous; the day ceiling
+      is 120x higher.
+auth:
+  parameter: api_key
+  parameterLocation: query
+  alternateLocation: HTTP Basic Authentication (key as password, username blank)
+  signup: https://open.fda.gov/apis/authentication/
+operations:
+  scope: global
+  notes:
+    - All openFDA endpoints share the same rate-limit envelope.
+    - Pagination is capped at skip=25,000 with limit=1,000 per request; deeper
+      pagination requires the bulk download files.

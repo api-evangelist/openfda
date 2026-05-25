@@ -1,0 +1,91 @@
+name: openFDA Vocabulary
+description: >-
+  Domain vocabulary for the openFDA public data APIs. Captures the regulatory,
+  scientific, and operational terms that recur across drug, device, food,
+  animal & veterinary, and tobacco datasets.
+provider: openFDA
+providerId: openfda
+modified: '2026-05-25'
+dimensions:
+  - name: Product Domain
+    terms:
+      - id: drug
+        label: Drug
+        definition: Human drug products regulated by CDER, including prescription, OTC, biologic, and compounded items.
+      - id: device
+        label: Device
+        definition: Medical devices regulated by CDRH (Class I-III), including in vitro diagnostics and combination products.
+      - id: food
+        label: Food
+        definition: Food and dietary supplement products regulated by CFSAN.
+      - id: animal-veterinary
+        label: Animal & Veterinary
+        definition: Animal drug and feed products regulated by CVM.
+      - id: tobacco
+        label: Tobacco
+        definition: Tobacco products regulated by CTP.
+      - id: other
+        label: Other
+        definition: Cross-cutting reference datasets — NSDE, substance registration, historical documents.
+  - name: Regulatory Process
+    terms:
+      - id: adverse-event
+        label: Adverse Event
+        definition: A spontaneously reported event of harm associated with the use of a regulated product.
+      - id: enforcement-report
+        label: Enforcement Report
+        definition: A weekly publication of formally classified recall actions taken by industry under FDA oversight.
+      - id: recall
+        label: Recall
+        definition: A removal or correction of a marketed product that violates FDA-administered laws.
+      - id: labeling
+        label: Labeling
+        definition: The Structured Product Labeling (SPL) record describing indications, dosage, warnings, and ingredients.
+      - id: approval
+        label: Approval
+        definition: An FDA decision authorizing marketing of a new drug, biologic, or device.
+      - id: 510k
+        label: 510(k)
+        definition: A premarket notification establishing substantial equivalence for a Class II device.
+      - id: pma
+        label: PMA
+        definition: A Premarket Approval Application for a Class III device.
+  - name: Identifier Systems
+    terms:
+      - id: ndc
+        label: NDC
+        definition: National Drug Code — a 3-segment FDA-administered identifier for drug products.
+      - id: udi
+        label: UDI
+        definition: Unique Device Identifier — globally unique identifier for medical devices required by 21 CFR 830.
+      - id: spl-id
+        label: SPL Set ID
+        definition: A persistent identifier for a product labeling document across its versions.
+      - id: nsde
+        label: NSDE
+        definition: NDC SPL Data Elements — a comprehensive list of drugs marketed in the US under unique NDC codes.
+  - name: Query Surface
+    terms:
+      - id: search
+        label: search
+        definition: Lucene-style query parameter used by every openFDA endpoint to filter records.
+      - id: count
+        label: count
+        definition: Aggregation parameter that returns frequency counts for a field instead of full documents.
+      - id: limit
+        label: limit
+        definition: Page-size parameter (max 1000) controlling how many documents an endpoint returns.
+      - id: skip
+        label: skip
+        definition: Pagination offset parameter (max 25,000) that, combined with limit, walks result pages.
+  - name: Operational
+    terms:
+      - id: api-key
+        label: API Key
+        definition: A free api.data.gov key that raises the daily quota from 1,000 to 120,000 requests per day.
+      - id: rate-limit
+        label: Rate Limit
+        definition: 240 requests/minute per IP or per key; 1000/day anonymous, 120000/day with key.
+      - id: not-clinical
+        label: Not for Clinical Decisions
+        definition: openFDA data is explicitly not validated for individual clinical care or public health alerting.
