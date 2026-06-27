@@ -191,7 +191,7 @@ common:
     type: Authentication
   - url: https://api.data.gov/signup/
     name: api.data.gov Signup
-    type: SignUp
+    type: Signup
   - url: https://open.fda.gov/apis/try-the-api/
     name: Try the API
     type: GettingStarted
@@ -206,7 +206,7 @@ common:
     type: APIReference
   - url: https://open.fda.gov/apis/errors/
     name: Error Reference
-    type: Errors
+    type: ErrorCodes
   - url: https://open.fda.gov/apis/downloads/
     name: Bulk Downloads
     type: Documentation
@@ -218,7 +218,7 @@ common:
     type: ChangeLog
   - url: https://open.fda.gov/community/
     name: Community
-    type: Forum
+    type: Forums
   - url: https://github.com/FDA
     name: FDA GitHub Organization
     type: GitHubOrganization
@@ -247,7 +247,7 @@ common:
     url: rules/openfda-rules.yml
   - type: SpectralRules
     url: rules/openfda-rules.yml
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/openfda-context.jsonld
   - type: Vocabulary
     url: vocabulary/openfda-vocabulary.yml
@@ -255,7 +255,7 @@ common:
     url: rate-limits/openfda-rate-limits.yml
   - type: JSONSchema
     url: json-schema/openfda-search-response-schema.json
-  - type: Example
+  - type: Examples
     url: examples/openfda-drug-event-example.json
   - type: Features
     data:
