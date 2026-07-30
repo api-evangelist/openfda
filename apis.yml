@@ -1,167 +1,402 @@
 aid: openfda
 url: https://raw.githubusercontent.com/api-evangelist/openfda/refs/heads/main/apis.yml
 apis:
-  - aid: openfda:openfda-drug-api
-    name: openFDA Drug API
-    tags:
-      - Drug
-      - Adverse Events
-      - Labeling
-      - Recalls
-      - NDC
-      - Government
-      - Healthcare
-    humanURL: https://open.fda.gov/apis/drug/
-    baseURL: https://api.fda.gov
-    description: >-
-      Drug-domain endpoints covering FAERS adverse event reports, Structured Product Labeling, drug recall enforcement
-      reports, the National Drug Code Directory, Drugs@FDA approvals, and the FDA drug shortage database. Six
-      Lucene-queryable endpoints under /drug/ that share a common search, sort, count, limit, and skip parameter
-      surface.
-    properties:
-      - type: Documentation
-        url: https://open.fda.gov/apis/drug/
-      - type: APIReference
-        url: https://open.fda.gov/apis/drug/event/
-      - type: Documentation
-        url: https://open.fda.gov/apis/drug/label/
-      - type: Documentation
-        url: https://open.fda.gov/apis/drug/enforcement/
-      - type: Documentation
-        url: https://open.fda.gov/apis/drug/ndc/
-      - type: Documentation
-        url: https://open.fda.gov/apis/drug/drugsfda/
-      - type: Documentation
-        url: https://open.fda.gov/apis/drug/shortages/
-      - type: OpenAPI
-        url: openapi/openfda-openapi.yml
-  - aid: openfda:openfda-device-api
-    name: openFDA Device API
-    tags:
-      - Device
-      - Adverse Events
-      - 510(k)
-      - PMA
-      - UDI
-      - Recalls
-      - Classification
-      - Government
-      - Healthcare
-    humanURL: https://open.fda.gov/apis/device/
-    baseURL: https://api.fda.gov
-    description: >-
-      Device-domain endpoints covering MAUDE adverse event reports, device classification, 510(k) premarket
-      notifications, PMA premarket approvals, UDI Unique Device Identifier records, device recall enforcement reports,
-      device recalls, registration and listing, and the COVID-19 in vitro diagnostic serology test results dataset.
-    properties:
-      - type: Documentation
-        url: https://open.fda.gov/apis/device/
-      - type: Documentation
-        url: https://open.fda.gov/apis/device/event/
-      - type: Documentation
-        url: https://open.fda.gov/apis/device/classification/
-      - type: Documentation
-        url: https://open.fda.gov/apis/device/enforcement/
-      - type: Documentation
-        url: https://open.fda.gov/apis/device/recall/
-      - type: Documentation
-        url: https://open.fda.gov/apis/device/510k/
-      - type: Documentation
-        url: https://open.fda.gov/apis/device/pma/
-      - type: Documentation
-        url: https://open.fda.gov/apis/device/udi/
-      - type: Documentation
-        url: https://open.fda.gov/apis/device/registrationlisting/
-      - type: Documentation
-        url: https://open.fda.gov/apis/device/covid19serology/
-      - type: OpenAPI
-        url: openapi/openfda-openapi.yml
-  - aid: openfda:openfda-food-api
-    name: openFDA Food API
-    tags:
-      - Food
-      - Adverse Events
-      - Recalls
-      - Enforcement
-      - Government
-      - Healthcare
-    humanURL: https://open.fda.gov/apis/food/
-    baseURL: https://api.fda.gov
-    description: >-
-      Food-domain endpoints covering food recall enforcement reports from the FDA Recall Enterprise System and CAERS
-      food adverse event reports spontaneously submitted to FDA about foods and dietary supplements.
-    properties:
-      - type: Documentation
-        url: https://open.fda.gov/apis/food/
-      - type: Documentation
-        url: https://open.fda.gov/apis/food/enforcement/
-      - type: Documentation
-        url: https://open.fda.gov/apis/food/event/
-      - type: OpenAPI
-        url: openapi/openfda-openapi.yml
-  - aid: openfda:openfda-animal-veterinary-api
-    name: openFDA Animal & Veterinary API
-    tags:
-      - Animal & Veterinary
-      - Adverse Events
-      - Government
-      - Healthcare
-    humanURL: https://open.fda.gov/apis/animalandveterinary/
-    baseURL: https://api.fda.gov
-    description: >-
-      Animal & Veterinary endpoint serving adverse event reports involving animal drug and feed products, submitted
-      voluntarily by veterinarians, drug manufacturers, and animal owners.
-    properties:
-      - type: Documentation
-        url: https://open.fda.gov/apis/animalandveterinary/
-      - type: Documentation
-        url: https://open.fda.gov/apis/animalandveterinary/event/
-      - type: OpenAPI
-        url: openapi/openfda-openapi.yml
-  - aid: openfda:openfda-tobacco-api
-    name: openFDA Tobacco API
-    tags:
-      - Tobacco
-      - Problem Reports
-      - Government
-      - Healthcare
-    humanURL: https://open.fda.gov/apis/tobacco/
-    baseURL: https://api.fda.gov
-    description: >-
-      Tobacco endpoint serving tobacco product problem reports submitted to the FDA Center for Tobacco Products,
-      covering unexpected health or quality issues with regulated tobacco items.
-    properties:
-      - type: Documentation
-        url: https://open.fda.gov/apis/tobacco/
-      - type: Documentation
-        url: https://open.fda.gov/apis/tobacco/problem/
-      - type: OpenAPI
-        url: openapi/openfda-openapi.yml
-  - aid: openfda:openfda-other-api
-    name: openFDA Other API
-    tags:
-      - NSDE
-      - Substance
-      - Historical Documents
-      - Government
-      - Healthcare
-    humanURL: https://open.fda.gov/apis/other/
-    baseURL: https://api.fda.gov
-    description: >-
-      Cross-cutting reference datasets including the NDC SPL Data Elements file of all drug products marketed in the US,
-      the FDA Substance Registration System harmonized substance data, and historical FDA documents and enforcement
-      actions.
-    properties:
-      - type: Documentation
-        url: https://open.fda.gov/apis/other/
-      - type: Documentation
-        url: https://open.fda.gov/apis/other/nsde/
-      - type: Documentation
-        url: https://open.fda.gov/apis/other/substance/
-      - type: Documentation
-        url: https://open.fda.gov/apis/other/historicaldocument/
-      - type: OpenAPI
-        url: openapi/openfda-openapi.yml
+- aid: openfda:openfda-animal-veterinary-api
+  name: openFDA Animal & Veterinary API
+  description: Adverse events involving animal and veterinary products.
+  humanURL: https://open.fda.gov/apis/drug/
+  baseURL: https://api.fda.gov
+  tags:
+  - Animal & Veterinary
+  properties:
+  - type: OpenAPI
+    url: openapi/openfda-animal-veterinary-api-openapi.yml
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/
+  - type: APIReference
+    url: https://open.fda.gov/apis/drug/event/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/label/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/enforcement/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/ndc/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/drugsfda/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/shortages/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/event/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/classification/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/enforcement/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/recall/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/510k/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/pma/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/udi/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/registrationlisting/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/covid19serology/
+  - type: Documentation
+    url: https://open.fda.gov/apis/food/
+  - type: Documentation
+    url: https://open.fda.gov/apis/food/enforcement/
+  - type: Documentation
+    url: https://open.fda.gov/apis/food/event/
+  - type: Documentation
+    url: https://open.fda.gov/apis/animalandveterinary/
+  - type: Documentation
+    url: https://open.fda.gov/apis/animalandveterinary/event/
+  - type: Documentation
+    url: https://open.fda.gov/apis/tobacco/
+  - type: Documentation
+    url: https://open.fda.gov/apis/tobacco/problem/
+  - type: Documentation
+    url: https://open.fda.gov/apis/other/
+  - type: Documentation
+    url: https://open.fda.gov/apis/other/nsde/
+  - type: Documentation
+    url: https://open.fda.gov/apis/other/substance/
+  - type: Documentation
+    url: https://open.fda.gov/apis/other/historicaldocument/
+- aid: openfda:openfda-device-api
+  name: openFDA Device API
+  description: Device-related endpoints (adverse events, classifications, recalls, 510(k), PMA, UDI).
+  humanURL: https://open.fda.gov/apis/drug/
+  baseURL: https://api.fda.gov
+  tags:
+  - Device
+  properties:
+  - type: OpenAPI
+    url: openapi/openfda-device-api-openapi.yml
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/
+  - type: APIReference
+    url: https://open.fda.gov/apis/drug/event/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/label/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/enforcement/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/ndc/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/drugsfda/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/shortages/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/event/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/classification/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/enforcement/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/recall/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/510k/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/pma/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/udi/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/registrationlisting/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/covid19serology/
+  - type: Documentation
+    url: https://open.fda.gov/apis/food/
+  - type: Documentation
+    url: https://open.fda.gov/apis/food/enforcement/
+  - type: Documentation
+    url: https://open.fda.gov/apis/food/event/
+  - type: Documentation
+    url: https://open.fda.gov/apis/animalandveterinary/
+  - type: Documentation
+    url: https://open.fda.gov/apis/animalandveterinary/event/
+  - type: Documentation
+    url: https://open.fda.gov/apis/tobacco/
+  - type: Documentation
+    url: https://open.fda.gov/apis/tobacco/problem/
+  - type: Documentation
+    url: https://open.fda.gov/apis/other/
+  - type: Documentation
+    url: https://open.fda.gov/apis/other/nsde/
+  - type: Documentation
+    url: https://open.fda.gov/apis/other/substance/
+  - type: Documentation
+    url: https://open.fda.gov/apis/other/historicaldocument/
+- aid: openfda:openfda-drug-api
+  name: openFDA Drug API
+  description: Drug-related endpoints (adverse events, labeling, recalls, NDC).
+  humanURL: https://open.fda.gov/apis/drug/
+  baseURL: https://api.fda.gov
+  tags:
+  - Drug
+  properties:
+  - type: OpenAPI
+    url: openapi/openfda-drug-api-openapi.yml
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/
+  - type: APIReference
+    url: https://open.fda.gov/apis/drug/event/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/label/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/enforcement/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/ndc/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/drugsfda/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/shortages/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/event/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/classification/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/enforcement/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/recall/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/510k/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/pma/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/udi/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/registrationlisting/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/covid19serology/
+  - type: Documentation
+    url: https://open.fda.gov/apis/food/
+  - type: Documentation
+    url: https://open.fda.gov/apis/food/enforcement/
+  - type: Documentation
+    url: https://open.fda.gov/apis/food/event/
+  - type: Documentation
+    url: https://open.fda.gov/apis/animalandveterinary/
+  - type: Documentation
+    url: https://open.fda.gov/apis/animalandveterinary/event/
+  - type: Documentation
+    url: https://open.fda.gov/apis/tobacco/
+  - type: Documentation
+    url: https://open.fda.gov/apis/tobacco/problem/
+  - type: Documentation
+    url: https://open.fda.gov/apis/other/
+  - type: Documentation
+    url: https://open.fda.gov/apis/other/nsde/
+  - type: Documentation
+    url: https://open.fda.gov/apis/other/substance/
+  - type: Documentation
+    url: https://open.fda.gov/apis/other/historicaldocument/
+- aid: openfda:openfda-food-api
+  name: openFDA Food API
+  description: Food-related endpoints (enforcement reports, adverse events).
+  humanURL: https://open.fda.gov/apis/drug/
+  baseURL: https://api.fda.gov
+  tags:
+  - Food
+  properties:
+  - type: OpenAPI
+    url: openapi/openfda-food-api-openapi.yml
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/
+  - type: APIReference
+    url: https://open.fda.gov/apis/drug/event/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/label/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/enforcement/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/ndc/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/drugsfda/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/shortages/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/event/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/classification/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/enforcement/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/recall/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/510k/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/pma/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/udi/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/registrationlisting/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/covid19serology/
+  - type: Documentation
+    url: https://open.fda.gov/apis/food/
+  - type: Documentation
+    url: https://open.fda.gov/apis/food/enforcement/
+  - type: Documentation
+    url: https://open.fda.gov/apis/food/event/
+  - type: Documentation
+    url: https://open.fda.gov/apis/animalandveterinary/
+  - type: Documentation
+    url: https://open.fda.gov/apis/animalandveterinary/event/
+  - type: Documentation
+    url: https://open.fda.gov/apis/tobacco/
+  - type: Documentation
+    url: https://open.fda.gov/apis/tobacco/problem/
+  - type: Documentation
+    url: https://open.fda.gov/apis/other/
+  - type: Documentation
+    url: https://open.fda.gov/apis/other/nsde/
+  - type: Documentation
+    url: https://open.fda.gov/apis/other/substance/
+  - type: Documentation
+    url: https://open.fda.gov/apis/other/historicaldocument/
+- aid: openfda:openfda-other-api
+  name: openFDA Other API
+  description: Cross-cutting datasets (NSDE, substance, harmonized).
+  humanURL: https://open.fda.gov/apis/drug/
+  baseURL: https://api.fda.gov
+  tags:
+  - Other
+  properties:
+  - type: OpenAPI
+    url: openapi/openfda-other-api-openapi.yml
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/
+  - type: APIReference
+    url: https://open.fda.gov/apis/drug/event/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/label/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/enforcement/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/ndc/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/drugsfda/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/shortages/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/event/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/classification/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/enforcement/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/recall/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/510k/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/pma/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/udi/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/registrationlisting/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/covid19serology/
+  - type: Documentation
+    url: https://open.fda.gov/apis/food/
+  - type: Documentation
+    url: https://open.fda.gov/apis/food/enforcement/
+  - type: Documentation
+    url: https://open.fda.gov/apis/food/event/
+  - type: Documentation
+    url: https://open.fda.gov/apis/animalandveterinary/
+  - type: Documentation
+    url: https://open.fda.gov/apis/animalandveterinary/event/
+  - type: Documentation
+    url: https://open.fda.gov/apis/tobacco/
+  - type: Documentation
+    url: https://open.fda.gov/apis/tobacco/problem/
+  - type: Documentation
+    url: https://open.fda.gov/apis/other/
+  - type: Documentation
+    url: https://open.fda.gov/apis/other/nsde/
+  - type: Documentation
+    url: https://open.fda.gov/apis/other/substance/
+  - type: Documentation
+    url: https://open.fda.gov/apis/other/historicaldocument/
+- aid: openfda:openfda-tobacco-api
+  name: openFDA Tobacco API
+  description: Tobacco product problem reports.
+  humanURL: https://open.fda.gov/apis/drug/
+  baseURL: https://api.fda.gov
+  tags:
+  - Tobacco
+  properties:
+  - type: OpenAPI
+    url: openapi/openfda-tobacco-api-openapi.yml
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/
+  - type: APIReference
+    url: https://open.fda.gov/apis/drug/event/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/label/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/enforcement/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/ndc/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/drugsfda/
+  - type: Documentation
+    url: https://open.fda.gov/apis/drug/shortages/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/event/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/classification/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/enforcement/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/recall/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/510k/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/pma/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/udi/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/registrationlisting/
+  - type: Documentation
+    url: https://open.fda.gov/apis/device/covid19serology/
+  - type: Documentation
+    url: https://open.fda.gov/apis/food/
+  - type: Documentation
+    url: https://open.fda.gov/apis/food/enforcement/
+  - type: Documentation
+    url: https://open.fda.gov/apis/food/event/
+  - type: Documentation
+    url: https://open.fda.gov/apis/animalandveterinary/
+  - type: Documentation
+    url: https://open.fda.gov/apis/animalandveterinary/event/
+  - type: Documentation
+    url: https://open.fda.gov/apis/tobacco/
+  - type: Documentation
+    url: https://open.fda.gov/apis/tobacco/problem/
+  - type: Documentation
+    url: https://open.fda.gov/apis/other/
+  - type: Documentation
+    url: https://open.fda.gov/apis/other/nsde/
+  - type: Documentation
+    url: https://open.fda.gov/apis/other/substance/
+  - type: Documentation
+    url: https://open.fda.gov/apis/other/historicaldocument/
 name: openFDA
 tags:
   - Government
@@ -177,7 +412,19 @@ tags:
   - Recalls
   - Regulatory
 kind: contract
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/openfda.png
 access: 3rd-Party
 common:
   - type: AgenticAccess
