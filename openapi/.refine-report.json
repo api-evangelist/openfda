@@ -1,0 +1,24 @@
+{
+  "provider": "openfda",
+  "sources": [
+    "openfda-animal-veterinary-api-openapi.yml",
+    "openfda-device-api-openapi.yml",
+    "openfda-drug-api-openapi.yml",
+    "openfda-food-api-openapi.yml",
+    "openfda-other-api-openapi.yml",
+    "openfda-tobacco-api-openapi.yml"
+  ],
+  "outputs": [
+    "openfda-animal-veterinary-api-openapi.yml",
+    "openfda-device-api-openapi.yml",
+    "openfda-drug-api-openapi.yml",
+    "openfda-food-api-openapi.yml",
+    "openfda-other-api-openapi.yml",
+    "openfda-tobacco-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
